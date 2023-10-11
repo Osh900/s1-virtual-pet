@@ -37,7 +37,7 @@ public class Runner{
     return s;
    }
 
-   public int getIntResponse(int q){
+   public int getIntResponse(String q){
         String s = (String)JOptionPane.showInputDialog(
                     new JFrame(),
                     q,
