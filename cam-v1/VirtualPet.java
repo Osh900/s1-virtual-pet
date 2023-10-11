@@ -8,6 +8,7 @@ public class VirtualPet {
     VirtualPetFace face;
     int hunger = 0;   // how hungry the pet is.
     int tiredness = 0;
+    
 
     // constructor
     public VirtualPet() {
@@ -16,6 +17,17 @@ public class VirtualPet {
         face.setMessage("Hello.");
     }
     
+    public int returnMoney (){
+        return (money)
+    }
+
+    public void setMessage (String a){
+        face.setMessage(a);
+    }
+    public void face1(String a) {
+        face.setImage(a);
+    }
+
     public void feed() {
         if (hunger > 10) {
             hunger = hunger - 10;
