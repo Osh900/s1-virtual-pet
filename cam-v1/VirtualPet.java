@@ -17,10 +17,7 @@ public class VirtualPet {
         face.setMessage("Hello.");
     }
     
-    public int returnMoney (){
-        return (money)
-    }
-
+    
     public void setMessage (String a){
         face.setMessage(a);
     }
