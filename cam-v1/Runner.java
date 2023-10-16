@@ -8,6 +8,8 @@ public class Runner{
      int money = 100;
      int guess = 0;
      int bet = 0;
+     int ods = 0;
+     boolean z = true; 
      public Runner(){
     VirtualPet p = new VirtualPet();
     
@@ -16,22 +18,25 @@ public class Runner{
      p.setMessage("Thats great");
      p.face1("happy");
 
-     p.setMessage("im fealing very risky today. lets go gambling");
+     p.setMessage("you know what will make your day better? Wining some money!");
      p.face1("joyful");
      takeAbeat(3000);
      p.setMessage("you have" + money + " in your acount" );
 
-     for (int i = 0; i < 15; i++ ){
+     while ( z == true ){
           if (money > 0){
           bet = getIntResponse(" how much do you want to bet ");
-               if (bet > money){
+               while (bet > money){
                 bet = getIntResponse(" you dont have that much money bet again ");
                }
-          guess = getIntResponse(" what number are you betting on 0 - 14 ");
-               if(guess >=14){
-                  guess = getIntResponse(" your number was to high. bet between 0 - 14 ");  
+
+          ods = getIntResponse(" what do you want your ods to be. 1/?");
+               
+          guess = getIntResponse(" what number are you betting on 0 to" + ods );
+               while (guess >= ods){
+                  guess = getIntResponse(" your number was to high. bet between 0 - " + ods);  
                }
-          int intA = (int)(Math.random()*15);
+          int intA = (int)(Math.random()*ods);
           takeAbeat(1000);
                if (gamble(intA) == 1){
                p.face1("joyful"); 
@@ -49,7 +54,10 @@ public class Runner{
                }
                takeAbeat(2000);
                }
-
+          String end = getResponse(" do you want to continue? yes / no");
+               if (end == "yes"){
+                    break; 
+               }
           
           }
 
@@ -67,7 +75,7 @@ public class Runner{
    }
      public int gamble(int d1) {
           if(d1 == guess){
-               money = money + (bet * 14);
+               money = money - bet + (bet * ods);
                return 1;
            } 
           else {
