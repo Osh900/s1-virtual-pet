@@ -36,6 +36,10 @@ public class Runner{
                while (guess >= ods){
                   guess = getIntResponse(" your number was to high. bet between 0 - " + ods);  
                }
+          for(int i= 0, i < 5; i++){
+               p.face1("joyful")
+               p.face1("joyful")
+          }
           int intA = (int)(Math.random()*ods);
           takeAbeat(1000);
                if (gamble(intA) == 1){
