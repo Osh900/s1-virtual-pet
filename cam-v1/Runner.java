@@ -30,15 +30,17 @@ public class Runner{
                 bet = getIntResponse(" you dont have that much money bet again ");
                }
 
-          ods = getIntResponse(" what do you want your ods to be. 1/?");
+          ods = getIntResponse(" what do you want your odds to be 1/? ");
                
           guess = getIntResponse(" what number are you betting on 0 to" + ods );
                while (guess >= ods){
                   guess = getIntResponse(" your number was to high. bet between 0 - " + ods);  
                }
-          for(int i= 0, i < 5; i++){
-               p.face1("joyful")
-               p.face1("joyful")
+          for(int i = 0; i < 20; i++){
+               p.face1("wheel_1");
+               takeAbeat(500);
+               p.face1("wheel_2");
+               System.out.println("hello");
           }
           int intA = (int)(Math.random()*ods);
           takeAbeat(1000);
