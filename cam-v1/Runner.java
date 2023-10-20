@@ -38,7 +38,7 @@ public class Runner{
                }
           for(int i = 0; i < 20; i++){
                p.face1("wheel_1");
-               takeAbeat(500);
+               takeAbeat(1500);
                p.face1("wheel_2");
                System.out.println("hello");
           }
